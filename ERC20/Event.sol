@@ -38,13 +38,12 @@ contract Event {
         uint256 _totalSupply,
         string memory _typeName,
         string memory _symbol,
-        uint256 _decimals,
         uint256 _price
     ) public {
         require(msg.sender == owner, "You are not authorized to add tokens!");
         address c =
             address(
-                new ERC20(_totalSupply, _typeName, _symbol, _decimals, _price)
+                new ERC20(_totalSupply, _typeName, _symbol, 0, _price)
             );
         types[c].totalSupply = _totalSupply;
         types[c].typeName = _typeName;
