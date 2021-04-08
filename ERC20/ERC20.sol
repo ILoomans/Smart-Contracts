@@ -105,7 +105,7 @@ contract ERC20 is Context, IERC20 {
      * - `recipient` cannot be the zero address.
      * - the caller must have a balance of at least `amount`.
      */
-    function transfer(address recipient, uint256 amount) public returns (bool) {
+    function transfer(address recipient, uint256 amount) internal returns (bool) {
         _transfer(_owner, recipient, amount);
         return true;
     }
